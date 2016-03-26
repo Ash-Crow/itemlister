@@ -1,0 +1,11 @@
+# ignore all hidden files except for lighttpd.conf and gitignore
+.*
+!/.lighttpd.conf
+!/.gitignore
+# avoid putting the sql password on git
+replica.my.cnf
+# ignore automatically generated files
+*.log
+service.*
+# ignore venv
+venv
