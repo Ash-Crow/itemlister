@@ -7,5 +7,6 @@ replica.my.cnf
 # ignore automatically generated files
 *.log
 service.*
+public_html
 # ignore venv
 venv
