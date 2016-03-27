@@ -7,5 +7,5 @@ def hello():
         return flask.render_template("hello.html", message="hi there!")
 
 @app.route("/<message>")
-def hello():
+def themessage(message):
         return flask.render_template("hello.html", message=message)
