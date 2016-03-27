@@ -3,10 +3,12 @@ from flup.server.fcgi import WSGIServer
 from flask_appconfig import AppConfig
 from flask import Flask, request
 from flask_bootstrap import Bootstrap
+from flask_nav import Nav
+
 import time
 import logging
 
-from controllers import itemlister, nav
+from controllers import itemlister
 
 # create Flask application
 app = Flask(__name__)
@@ -20,6 +22,7 @@ logger = FileHandler('error.log')
 app.logger.setLevel(logging.DEBUG)
 app.logger.addHandler(logger)
 
+nav = Nav()
 nav.init_app(app)
 
 # log Flask events
