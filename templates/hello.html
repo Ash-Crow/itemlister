@@ -1,5 +1,14 @@
-{% extends "base.html" %}
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
 {% set page_title = 'Hello world!' %}
 {% block content %}
         <p>The server would like to say "{{message}}". :)</p>
 {% endblock %}
+
