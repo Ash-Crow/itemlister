@@ -4,12 +4,12 @@ from flask import Flask, request
 from flask_bootstrap import Bootstrap
 import time
 import logging
-from controllers import hello
+from controllers import itemlister
 
 # create Flask application
 app = Flask(__name__)
 Bootstrap(app)
-app.register_blueprint(hello.app)
+app.register_blueprint(itemlister.app)
 
 # configure Flask logging
 from logging import FileHandler

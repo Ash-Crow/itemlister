@@ -8,5 +8,6 @@ replica.my.cnf
 *.log
 service.*
 public_html
+*.pyc
 # ignore venv
 venv
