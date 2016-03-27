@@ -1,14 +1,12 @@
 #!/data/project/itemlister/venv/bin/python
 from flup.server.fcgi import WSGIServer
 from flask import Flask, request
-from flask_bootstrap import Bootstrap
 import time
 import logging
 from controllers import hello
 
 # create Flask application
 app = Flask(__name__)
-Bootstrap(app)
 app.register_blueprint(hello.app)
 
 # configure Flask logging
