@@ -1,13 +1,16 @@
 #!/data/project/itemlister/venv/bin/python
 from flup.server.fcgi import WSGIServer
+from flask_appconfig import AppConfig
 from flask import Flask, request
 from flask_bootstrap import Bootstrap
 import time
 import logging
-from controllers import itemlister
+
+from controllers import itemlister, nav
 
 # create Flask application
 app = Flask(__name__)
+AppConfig(app)
 Bootstrap(app)
 app.register_blueprint(itemlister.app)
 
@@ -16,6 +19,8 @@ from logging import FileHandler
 logger = FileHandler('error.log')
 app.logger.setLevel(logging.DEBUG)
 app.logger.addHandler(logger)
+
+nav.init_app(app)
 
 # log Flask events
 app.logger.debug(u"Flask server started " + time.asctime())
