@@ -2,6 +2,7 @@ import flask
 
 from flask_bootstrap import __version__ as FLASK_BOOTSTRAP_VERSION
 from flask_nav.elements import Navbar, View, Subgroup, Link, Text, Separator
+from .nav import nav
 
 app = flask.Blueprint("itemlister", __name__)
 
